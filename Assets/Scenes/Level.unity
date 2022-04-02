@@ -738,7 +738,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 511aace0edc9f6e4b889a262e22cf04f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -915,7 +915,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 69c9572128c537b428222ac3fb7d3139, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1208,6 +1208,11 @@ MonoBehaviour:
   - {fileID: 6396938052533605223, guid: afeda2789f203e142a3a846eb899d5e6, type: 3}
   - {fileID: 8560221373029836448, guid: 47424187437b5d4448e6848002e2e6ed, type: 3}
   _pickUpObjects: []
+  _clouds:
+  - {fileID: 6081391770669929245, guid: 914ab92ae399982489cc119883e6c65a, type: 3}
+  - {fileID: 3548784565977664479, guid: 1e13628891279e54097d0db33be949ec, type: 3}
+  - {fileID: 3307966356327750589, guid: 14defd588bdea3e4099d67d8a963f915, type: 3}
+  - {fileID: 7435966276442215409, guid: e338da78adcabb04289d9ce783e39082, type: 3}
   _fallingInitialPosition: 12
   _floatingInitialPosition: -12
 --- !u!4 &1895617770

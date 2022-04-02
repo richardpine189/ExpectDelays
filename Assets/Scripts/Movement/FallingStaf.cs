@@ -5,6 +5,8 @@ using UnityEngine;
 public class FallingStaf : MonoBehaviour
 {
     [SerializeField] bool isFalling = false;
+    [SerializeField] bool isRotating = false;
+    [SerializeField] bool controlSpeed = false;
     [SerializeField] private float _initialSpeed;
     [SerializeField] private float _currentSpeed;
     [SerializeField] private float _rotationSpeed;
@@ -30,12 +32,17 @@ public class FallingStaf : MonoBehaviour
     void Update()
     {
         _stafTransform.Translate(fallingVector * _initialSpeed * Time.deltaTime, Space.World);
+        if(isRotating)
         _stafTransform.Rotate(Vector3.forward * Time.deltaTime * _rotationSpeed);
     }
 
     void RandomizeSpeed()
     {
-        _initialSpeed = Random.Range(MIN_FALLING_SPEED, MAX_FALLING_SPEED);
-        _rotationSpeed = Random.Range(MIN_ROTATION_SPEED, MAX_ROTATION_SPEED);
+        if(!controlSpeed) 
+            _initialSpeed = Random.Range(MIN_FALLING_SPEED, MAX_FALLING_SPEED);
+        if(isRotating)
+            _rotationSpeed = Random.Range(MIN_ROTATION_SPEED, MAX_ROTATION_SPEED);
     }
 }
+
+
