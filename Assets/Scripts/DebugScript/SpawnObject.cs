@@ -13,7 +13,6 @@ public class SpawnObject : MonoBehaviour
     {
         InvokeRepeating("SimpleSpawn", 2, 3);
 
-
     }
 
     private void SimpleSpawn()
