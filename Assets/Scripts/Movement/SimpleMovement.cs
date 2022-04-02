@@ -6,12 +6,12 @@ public class SimpleMovement : MonoBehaviour
 {
     [SerializeField] float speedMovement;
 
-    private Rigidbody _characterRb;
+    private Rigidbody2D _characterRb;
     private float _h;
     // Start is called before the first frame update
     void Start()
     {
-        _characterRb = GetComponent<Rigidbody>();
+        _characterRb = GetComponent<Rigidbody2D>();
     }
     private void Update()
     {
@@ -23,7 +23,7 @@ public class SimpleMovement : MonoBehaviour
         
         if(_h!=0)
         {
-            _characterRb.AddForce(Vector3.right * _h * speedMovement);
+            _characterRb.AddForce(Vector2.right * _h * speedMovement);
         }
 
     }
