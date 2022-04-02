@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ButtonMenuManager : MonoBehaviour
 {
+
     public void OnLoadLevel()
     {
         SceneManager.LoadScene("Level");
