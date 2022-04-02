@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 3efb5032147342f4c902e2bc01ad11f2
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Mexican fiesta
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 137b255e5e883a04d89b9481c4c230bd, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
