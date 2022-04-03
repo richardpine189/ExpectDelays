@@ -17,15 +17,16 @@ public class SpawnObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SimpleSpawn", 2, 2);
-        InvokeRepeating("SpawnCloud", 2, 4);
+        InvokeRepeating("SimpleSpawn", 2, 2); // Arreglar Hardcodeo
+        InvokeRepeating("SpawnCloud", 2, 4); // Arreglar Hardcodeo
+        InvokeRepeating("PickUpSpawn", 5, 8); // Arreglar Hardcodeo
 
     }
 
     private void SimpleSpawn()
     {
         int randomObstacle = Random.Range(0, _obstacles.Count);
-        float randomXPosition = Random.Range(MIN_SPAWN_OBJECTS, MAX_SPAWN_OBJECTS);
+        float randomXPosition = Random.Range(MIN_SPAWN_OBJECTS, MAX_SPAWN_OBJECTS); // ARREGLAR DRY
         Vector3 spawnPosition = new Vector3(randomXPosition, _fallingInitialPosition, 10);
         Instantiate(_obstacles[randomObstacle], spawnPosition, Quaternion.identity);
     }
@@ -33,9 +34,16 @@ public class SpawnObject : MonoBehaviour
     private void SpawnCloud()
     {
         int randomCloud = Random.Range(0, _clouds.Count);
-        float randomXPosition = Random.Range(MIN_SPAWN_OBJECTS, MAX_SPAWN_OBJECTS);
+        float randomXPosition = Random.Range(MIN_SPAWN_OBJECTS, MAX_SPAWN_OBJECTS); // ARREGLAR DRY
         Vector3 spawnPosition = new Vector3(randomXPosition, _floatingInitialPosition, 10);
         Instantiate(_clouds[randomCloud], spawnPosition, Quaternion.identity);
+    }
+
+    private void PickUpSpawn()
+    {
+        float randomXPosition = Random.Range(MIN_SPAWN_OBJECTS, MAX_SPAWN_OBJECTS); // ARREGLAR DRY
+        Vector3 spawnPosition = new Vector3(randomXPosition, _floatingInitialPosition, 10);
+        Instantiate(_pickUpObjects[0], spawnPosition, Quaternion.identity); //Arreglar Hardcodeo
     }
 
 }
