@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class PlaneMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] GameObject character;
+    [SerializeField] Vector3 directionPlanes;
+
     void Start()
     {
-        
+        character.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(directionPlanes * Time.deltaTime);
+
+        if (transform.position.x > character.transform.position.x)
+        {
+            character.SetActive(true);
+        }
     }
 }
