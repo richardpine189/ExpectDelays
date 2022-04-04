@@ -8,16 +8,9 @@ public class PlaneMovement : MonoBehaviour
     [SerializeField] GameObject _spawner;
     [SerializeField] GameObject _timer;
     [SerializeField] Vector3 _directionPlanes;
-    AudioSource source { get { return GetComponent<AudioSource>(); } }
-    [SerializeField] AudioClip clip;
 
 
-    void Start()
-    {
-        gameObject.AddComponent<AudioSource>();
-        source.clip = clip;
-
-    }
+ 
 
     void Update()
     {
@@ -28,7 +21,6 @@ public class PlaneMovement : MonoBehaviour
             _character.SetActive(true);
             _timer.SetActive(true);
             StartCoroutine(ActiveSpawner());
-            source.Play();
         }
 
         if (transform.position.x > 20)
