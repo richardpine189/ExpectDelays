@@ -276,6 +276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 1437960316}
   directionPlanes: {x: 5, y: 0, z: 0}
+  clip: {fileID: 8300000, guid: 8c29121fe69afd64c8ab6c6a16b3c835, type: 3}
 --- !u!4 &66205205 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5f6338a70deeb7c40a945a44d9115c63, type: 3}
@@ -5994,7 +5995,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1212970831}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e6dc115e3ec79fa4dba0712b972e6b27, type: 3}
