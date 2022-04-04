@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class SoundMenuButton : MonoBehaviour
 {
-     AudioSource source { get { return GetComponent<AudioSource>(); } }
-     Button button { get { return GetComponent<Button>(); } }
+    AudioSource source { get { return GetComponent<AudioSource>(); } }
+    Button button { get { return GetComponent<Button>(); } }
 
     [SerializeField] AudioClip clip;
 
@@ -21,4 +21,6 @@ public class SoundMenuButton : MonoBehaviour
     {
         source.PlayOneShot(clip);
     }
+
 }
+

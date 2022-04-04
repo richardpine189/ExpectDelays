@@ -20,5 +20,11 @@ public class PlaneMovement : MonoBehaviour
         {
             character.SetActive(true);
         }
+
+        if (transform.position.x > 20)
+        {
+            Destroy(gameObject);
+        }
+
     }
 }
