@@ -7,6 +7,7 @@ public class GameOverCondition : MonoBehaviour
 {
     [SerializeField] private GameObject _character;
     [SerializeField] private GameObject _spawner;
+    
 
     private bool _readyForAnimation = false;
     [SerializeField] private float _finalFallingSpeed = 20;
@@ -30,7 +31,7 @@ public class GameOverCondition : MonoBehaviour
         }
     }
 
-    private void GameOverSecuence()
+    private void GameOverSecuence(int time) //Refactorizar
     {
         _spawner.SetActive(false);
         StartCoroutine(CharacterFalling());

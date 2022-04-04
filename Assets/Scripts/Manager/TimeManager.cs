@@ -6,7 +6,7 @@ using TMPro;
 public class TimeManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI _timerText;
-    private float _timerCount;
+    public float _timerCount { get; private set; }
     private bool _isCounting = true;
     // Start is called before the first frame update
     void Start()
@@ -30,7 +30,7 @@ public class TimeManager : MonoBehaviour
         }
     }
 
-    private void SetTimeInPlayerPref()
+    private void SetTimeInPlayerPref(int time)
     {
         _isCounting = false;
 

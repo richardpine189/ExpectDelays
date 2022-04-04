@@ -5,6 +5,7 @@ using UnityEngine;
 public class CollisionDetection : MonoBehaviour
 {
     [SerializeField] private GameObject _umbrella;
+    [SerializeField] private TimeManager _timeManager;
     private static int _life;
     // Start is called before the first frame update
     void Start()
@@ -19,9 +20,9 @@ public class CollisionDetection : MonoBehaviour
 
     private void UpdateUmbrellaAnimationState(bool isDown)
     {
-        
+
         if (_life == 0)
-            CallBackManager.OnGameOver();
+            CallBackManager.OnGameOver((int)Mathf.Round(_timeManager._timerCount));
         if (isDown)
             _umbrella.GetComponent<Animator>().SetTrigger("DecreaseLife");
         else

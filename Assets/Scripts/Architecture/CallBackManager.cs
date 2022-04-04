@@ -8,8 +8,9 @@ public class CallBackManager : MonoBehaviour
     public delegate void UpdateDamageInUmbrella(bool isDown);
     public static event UpdateDamageInUmbrella onUpdateDamageInUmbrella;
 
-    public delegate void GameOverCallBack();
+    public delegate void GameOverCallBack(int time);
     public static event GameOverCallBack onGameOver;
+    
 
 
     public static void OnUpdateDamageInUI(bool isDown)
@@ -22,8 +23,9 @@ public class CallBackManager : MonoBehaviour
         onUpdateDamageInUmbrella?.Invoke(isDown);
     }
 
-    public static void OnGameOver()
+    public static void OnGameOver(int time)
     {
-        onGameOver?.Invoke();
+        onGameOver?.Invoke(time);
     }
+
 }
