@@ -23,6 +23,7 @@ public class SimpleMovement : MonoBehaviour
         
         if(_h!=0)
         {
+            Debug.Log("h != 0 ");
             _characterRb.AddForce(Vector2.right * _h * speedMovement);
         }
 

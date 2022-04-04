@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PlaneMovement : MonoBehaviour
 {
-    [SerializeField] GameObject character;
-    [SerializeField] Vector3 directionPlanes;
+    [SerializeField] GameObject _character;
+    [SerializeField] GameObject _spawner;
+    [SerializeField] Vector3 _directionPlanes;
     AudioSource source { get { return GetComponent<AudioSource>(); } }
     [SerializeField] AudioClip clip;
 
@@ -14,17 +15,18 @@ public class PlaneMovement : MonoBehaviour
     {
         gameObject.AddComponent<AudioSource>();
         source.clip = clip;
-        character.SetActive(false);
+        _character.SetActive(false);
 
     }
 
     void Update()
     {
-        transform.Translate(directionPlanes * Time.deltaTime);
+        transform.Translate(_directionPlanes * Time.deltaTime);
 
-        if (transform.position.x > character.transform.position.x)
+        if (transform.position.x > _character.transform.position.x)
         {
-            character.SetActive(true);
+            _character.SetActive(true);
+            StartCoroutine(ActiveSpawner());
             source.Play();
         }
 
@@ -34,5 +36,10 @@ public class PlaneMovement : MonoBehaviour
 
         }
 
+    }
+    private IEnumerator ActiveSpawner()
+    {
+        yield return new WaitForSeconds(2);
+        _spawner.SetActive(true);
     }
 }
