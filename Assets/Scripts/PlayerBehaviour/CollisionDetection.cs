@@ -5,17 +5,23 @@ using UnityEngine;
 public class CollisionDetection : MonoBehaviour
 {
     [SerializeField] private GameObject _umbrella;
-    private static int _life = 3;
+    private static int _life;
     // Start is called before the first frame update
     void Start()
     {
-        //_umbrella = GameObject.Find("Umbrella"); // ARREGLAR HARDOCODEO
+        _life = 3;
         CallBackManager.onUpdateDamageInUmbrella += UpdateUmbrellaAnimationState;
+    }
+    void OnDestroy()
+    {
+        CallBackManager.onUpdateDamageInUmbrella -= UpdateUmbrellaAnimationState;
     }
 
     private void UpdateUmbrellaAnimationState(bool isDown)
     {
-        if (_life == 0) return;
+        
+        if (_life == 0)
+            CallBackManager.OnGameOver();
         if (isDown)
             _umbrella.GetComponent<Animator>().SetTrigger("DecreaseLife");
         else

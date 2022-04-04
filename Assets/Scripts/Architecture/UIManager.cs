@@ -19,6 +19,10 @@ public class UIManager : MonoBehaviour
     {
         CallBackManager.onUpdateDamageInUI += UpdateBar;
     }
+    private void OnDestroy()
+    {
+        CallBackManager.onUpdateDamageInUI -= UpdateBar;
+    }
 
     // Update is called once per frame
     void UpdateBar(bool isDown)
@@ -32,24 +36,5 @@ public class UIManager : MonoBehaviour
         _innerBar.GetComponent<Image>().color = _barColor[_count];
         _umbrellaIcon.sprite = _umbrellaState[_count];
 
-    }
-}
-
-public class CallBackManager : MonoBehaviour
-{
-    public delegate void UpdateDamageInUI(bool isDown);
-    public static event UpdateDamageInUI onUpdateDamageInUI;
-
-    public delegate void UpdateDamageInUmbrella(bool isDown);
-    public static event UpdateDamageInUmbrella onUpdateDamageInUmbrella;
-
-    public static void OnUpdateDamageInUI(bool isDown)
-    {
-        onUpdateDamageInUI?.Invoke(isDown);
-    }
-
-    public static void OnUpdateDamageInUmbrella(bool isDown)
-    {
-        onUpdateDamageInUmbrella?.Invoke(isDown);
     }
 }
