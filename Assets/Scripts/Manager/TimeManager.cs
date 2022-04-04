@@ -7,7 +7,7 @@ public class TimeManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI _timerText;
     private float _timerCount;
-    private bool _isCounting;
+    private bool _isCounting = true;
     // Start is called before the first frame update
     void Start()
     {
