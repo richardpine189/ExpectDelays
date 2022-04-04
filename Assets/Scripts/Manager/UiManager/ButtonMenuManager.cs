@@ -8,6 +8,7 @@ public class ButtonMenuManager : MonoBehaviour
 {
 
     [SerializeField] GameObject _creditPanel;
+    [SerializeField] GameObject _recordPanel;
 
     public void OnLoadLevel()
     {
@@ -24,6 +25,14 @@ public class ButtonMenuManager : MonoBehaviour
     public void OnUnloadCreditPanel()
     {
         _creditPanel.SetActive(false);
+    }
+    public void OnLoadRecordPanel()
+    {
+        _recordPanel.SetActive(true);
+    }
+    public void OnUnloadRecordPanel()
+    {
+        _recordPanel.SetActive(false);
     }
     public void OnLoadMenu()
     {
