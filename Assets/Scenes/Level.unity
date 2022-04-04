@@ -1332,6 +1332,7 @@ GameObject:
   - component: {fileID: 1437960319}
   - component: {fileID: 1437960321}
   - component: {fileID: 1437960322}
+  - component: {fileID: 1437960323}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -1468,7 +1469,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -1.9238234, y: 7.2303853}
@@ -1484,6 +1485,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 16.152353, y: 29.992794}
   m_EdgeRadius: 0
+--- !u!114 &1437960323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437960316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90b5f87064352ed4ba11f80fd4533afa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _umbrella: {fileID: 1070830491}
 --- !u!1 &1472849761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1670,7 +1684,8 @@ MonoBehaviour:
   - {fileID: 6844926871688198821, guid: da8b55c9cc7f11543848d0f7277c55f9, type: 3}
   - {fileID: 6396938052533605223, guid: afeda2789f203e142a3a846eb899d5e6, type: 3}
   - {fileID: 8560221373029836448, guid: 47424187437b5d4448e6848002e2e6ed, type: 3}
-  _pickUpObjects: []
+  _pickUpObjects:
+  - {fileID: 4359137940591058686, guid: 844c0b8e873384c4db369016a09efb1b, type: 3}
   _clouds:
   - {fileID: 6081391770669929245, guid: 914ab92ae399982489cc119883e6c65a, type: 3}
   - {fileID: 3307966356327750589, guid: 14defd588bdea3e4099d67d8a963f915, type: 3}
