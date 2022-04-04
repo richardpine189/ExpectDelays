@@ -25,4 +25,8 @@ public class ButtonMenuManager : MonoBehaviour
     {
         _creditPanel.SetActive(false);
     }
+    public void OnLoadMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
 }
