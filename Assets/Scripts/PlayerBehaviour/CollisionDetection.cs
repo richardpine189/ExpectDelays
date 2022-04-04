@@ -41,10 +41,13 @@ public class CollisionDetection : MonoBehaviour
         }
         else if(other.gameObject.CompareTag("PickUp"))
         {
-            _life++;
-            CallBackManager.OnUpdateDamageInUI(false); // SACAR HARDCODEO
-            CallBackManager.OnUpdateDamageInUmbrella(false);
-            Destroy(other.gameObject);
+            if (_life < 3) // SACAR HARDCODEO
+            {
+                _life++;
+                CallBackManager.OnUpdateDamageInUI(false); // SACAR HARDCODEO
+                CallBackManager.OnUpdateDamageInUmbrella(false);
+                Destroy(other.gameObject);
+            }
         }
     }
 
