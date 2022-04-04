@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class RecordTime : MonoBehaviour
 {
-    private Dictionary<int, int> _recordTime = new Dictionary<int, int>();
+    private Dictionary<int, int> _recordTimeDictionary = new Dictionary<int, int>();
     private int _initValue = 0;
+
+    public Dictionary<int, int> RecordTimeDictionary { get => _recordTimeDictionary; private set => _recordTimeDictionary = value; }
 
     // Start is called before the first frame update
     void Awake()
@@ -38,16 +40,16 @@ public class RecordTime : MonoBehaviour
     {
         for (int i = 1; i <= 10; i++)
         {
-            _recordTime.Add(i, PlayerPrefs.GetInt(i.ToString()));
+            RecordTimeDictionary.Add(i, PlayerPrefs.GetInt(i.ToString()));
         }
     }
     
     public void SetTimeInRecord(int time)
     {
         int tempPosition = 0;
-        foreach(KeyValuePair<int,int> k in _recordTime)
+        foreach(KeyValuePair<int,int> k in RecordTimeDictionary)
         {
-            if (k.Value < time)
+            if (time > k.Value)
             {
                 tempPosition = k.Key;
                 break;
@@ -55,25 +57,25 @@ public class RecordTime : MonoBehaviour
         }
         for(int i = tempPosition; i<=9;i++)
         {
-                _recordTime[i++] = _recordTime[i];
+            RecordTimeDictionary[i++] = RecordTimeDictionary[i];
         }
-        _recordTime[tempPosition] = time;
+        RecordTimeDictionary[tempPosition] = time;
         SaveDictionaryInPlayerPrefs();
     }
     private void SaveDictionaryInPlayerPrefs()
     {
-        foreach (KeyValuePair<int, int> k in _recordTime)
+        foreach (KeyValuePair<int, int> k in RecordTimeDictionary)
         {
             PlayerPrefs.SetInt(k.Key.ToString(),k.Value);
         }
     }
     public Dictionary<int, int> GetDictionaryRecord()
     {
-        return _recordTime;
+        return RecordTimeDictionary;
     }
     public void DebugDictionary()
     {
-        foreach(KeyValuePair<int,int> k in _recordTime)
+        foreach(KeyValuePair<int,int> k in RecordTimeDictionary)
         {
             Debug.Log($"Position {k.Key} has {k.Value} time.");
         }

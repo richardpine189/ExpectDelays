@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class FillRecordTable : MonoBehaviour
@@ -14,7 +15,7 @@ public class FillRecordTable : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _record = _recordTime.GetDictionaryRecord();
+        _record = _recordTime?.RecordTimeDictionary;
         InitRecord();
     }
     private void InitRecord()
@@ -22,7 +23,7 @@ public class FillRecordTable : MonoBehaviour
         for (int i = 1; i <= 10; i++)
         {
             GameObject tempGo = Instantiate(_recordPrefab, _parentContainer.transform);
-            tempGo.GetComponent<TextMeshProUGUI>().text = $"{1} - Position : {_record[i]}";
+            tempGo.GetComponent<TextMeshProUGUI>().text = $"{i} - Position : {_record[i]}";
         }
     }
 }
