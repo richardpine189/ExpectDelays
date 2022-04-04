@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6396938052533605221}
   - component: {fileID: 6396938052533605222}
   - component: {fileID: 6396938052533605242}
+  - component: {fileID: 910917720797620001}
   m_Layer: 0
   m_Name: Bag2
   m_TagString: Obstacle
@@ -164,3 +165,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
+--- !u!114 &910917720797620001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6396938052533605223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1051cfc6b2eab7f4baf358c9b771b801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nextSprite: {fileID: 21300000, guid: a42e6e8e0185b0845b23ebefc35e370c, type: 3}

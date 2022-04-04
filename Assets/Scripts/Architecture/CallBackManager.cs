@@ -8,6 +8,9 @@ public class CallBackManager : MonoBehaviour
     public delegate void UpdateDamageInUmbrella(bool isDown);
     public static event UpdateDamageInUmbrella onUpdateDamageInUmbrella;
 
+    public delegate void UpdateSpriteWhenHit();
+    public static event UpdateSpriteWhenHit onChangeSpriteWhenHit;
+
     public delegate void GameOverCallBack(int time);
     public static event GameOverCallBack onGameOver;
     
@@ -26,6 +29,11 @@ public class CallBackManager : MonoBehaviour
     public static void OnGameOver(int time)
     {
         onGameOver?.Invoke(time);
+    }
+
+    public static void OnChangeSpriteWhenHit()
+    {
+        onChangeSpriteWhenHit?.Invoke();
     }
 
 }

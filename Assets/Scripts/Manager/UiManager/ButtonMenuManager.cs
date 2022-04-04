@@ -9,6 +9,7 @@ public class ButtonMenuManager : MonoBehaviour
 
     [SerializeField] GameObject _creditPanel;
     [SerializeField] GameObject _recordPanel;
+    [SerializeField] GameObject _pausePanel;
 
     public void OnLoadLevel()
     {
@@ -37,5 +38,19 @@ public class ButtonMenuManager : MonoBehaviour
     public void OnLoadMenu()
     {
         SceneManager.LoadScene("Menu");
+    }
+    public void OnPausePanel()
+    {
+        _pausePanel.SetActive(true);
+    }
+    private void Update() // ASQUEROSO SACAR DE ACA
+    {
+        if(SceneManager.GetActiveScene().name == "Level")
+        {
+            if(Input.GetKeyDown(KeyCode.P))
+            {
+                OnPausePanel();
+            }
+        }
     }
 }

@@ -36,6 +36,8 @@ public class CollisionDetection : MonoBehaviour
             _life--;
             CallBackManager.OnUpdateDamageInUI(true); // SACAR HARDCODEO
             CallBackManager.OnUpdateDamageInUmbrella(true);
+            CallBackManager.OnChangeSpriteWhenHit();
+            Destroy(other.gameObject.GetComponent<BoxCollider2D>());
         }
         else if(other.gameObject.CompareTag("PickUp"))
         {
