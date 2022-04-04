@@ -23,6 +23,7 @@ public class SpriteChanger : MonoBehaviour
         {
             gameObject.GetComponent<Animator>().SetTrigger("CharacterIsHit");
         }
+
         gameObject.GetComponent<SpriteRenderer>().sprite = _nextSprite;
     }
     
