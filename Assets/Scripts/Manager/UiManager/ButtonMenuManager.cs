@@ -13,6 +13,7 @@ public class ButtonMenuManager : MonoBehaviour
 
     public void OnLoadLevel()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Level");
     }
     public void OnExit()
@@ -29,6 +30,7 @@ public class ButtonMenuManager : MonoBehaviour
     }
     public void OnLoadRecordPanel()
     {
+        
         _recordPanel.SetActive(true);
     }
     public void OnUnloadRecordPanel()
@@ -37,10 +39,12 @@ public class ButtonMenuManager : MonoBehaviour
     }
     public void OnLoadMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
     }
     public void OnPausePanel()
     {
+        Time.timeScale = 0f;
         _pausePanel.SetActive(true);
     }
     private void Update() // ASQUEROSO SACAR DE ACA
@@ -49,6 +53,7 @@ public class ButtonMenuManager : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.P))
             {
+                
                 OnPausePanel();
             }
         }
