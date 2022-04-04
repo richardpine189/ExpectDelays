@@ -15,7 +15,6 @@ public class PlaneMovement : MonoBehaviour
     {
         gameObject.AddComponent<AudioSource>();
         source.clip = clip;
-        _character.SetActive(false);
 
     }
 
