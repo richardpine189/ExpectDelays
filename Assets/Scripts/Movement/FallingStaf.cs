@@ -14,7 +14,7 @@ public class FallingStaf : MonoBehaviour
     private const float MIN_ROTATION_SPEED = -30;
     private const float MAX_ROTATION_SPEED = 30;
     private const float MIN_FALLING_SPEED = 5;
-    private const float MAX_FALLING_SPEED = 20;
+    private const float MAX_FALLING_SPEED = 25;
     private Transform _stafTransform;
     private Vector2 fallingVector;
 
